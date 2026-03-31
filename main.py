@@ -1,6 +1,7 @@
 from scraper.jobs_scraper import scrape_jobs
 from storage.csv_handler import save_jobs
 from datetime import datetime
+import os
 
 def main():
     jobs = scrape_jobs()
