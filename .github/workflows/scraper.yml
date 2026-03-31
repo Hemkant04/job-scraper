@@ -2,8 +2,11 @@ name: Job Scraper Automation
 
 on:
   schedule:
-    - cron: "30 2 * * *"   # Runs daily at 8:15 AM Nepal time (UTC+5:45 → 2:30 UTC)
-  workflow_dispatch:        # Also allows manual trigger from GitHub UI
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true   # fixes the Node.js warning
 
 jobs:
   run-scraper:
@@ -24,7 +27,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run scraper
-        run: python main.py
+        run: python3 main.py
 
       - name: Commit and push updated CSV
         run: |
