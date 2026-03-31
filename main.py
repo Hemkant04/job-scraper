@@ -9,9 +9,11 @@ def main():
     save_jobs(jobs)
 
 
+    log_path = os.path.join(os.path.dirname(__file__), "cron_check.txt")
+    with open(log_path, "a") as f:
+        f.write(f"Ran at: {datetime.now()}\n")
 
-with open("/Users/hemkantsah/job_scraper/cron_check.txt", "a") as f:
-    f.write(f"Ran at: {datetime.now()}\n")
+
 
 if __name__ == "__main__":
     main()

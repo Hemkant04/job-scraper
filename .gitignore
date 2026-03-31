@@ -276,3 +276,7 @@ pyvenv.cfg
 pip-selfcheck.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python,venv,django
+
+# In .gitignore — make sure this is NOT blocking your output:
+# data/        ← remove this line if present
+!data/*.csv    # ← add this to explicitly allow CSV files
